@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "building watcher executable"
+rm -R ./dist
+mkdir -p ./dist
+cat ./src/runnable-stub/stub.sh.template ./target/*.jar > ./dist/watcher && chmod +x ./dist/watcher
+
+echo "building done. Executable is in ./dist directory"
