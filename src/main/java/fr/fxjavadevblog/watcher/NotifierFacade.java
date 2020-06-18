@@ -2,7 +2,6 @@ package fr.fxjavadevblog.watcher;
 
 import fr.jcgay.notification.Icon;
 import fr.jcgay.notification.Notification;
-import fr.jcgay.notification.Notifier;
 import fr.jcgay.notification.SendNotification;
 
 /**
@@ -23,10 +22,10 @@ public class NotifierFacade {
 	 */
 	public static void send(String title, String message)
 	{
-		Notifier notifier = new SendNotification().initNotifier();
+		var notifier = new SendNotification().initNotifier();
 		try
 		{
-			Notification notification = Notification.builder().title(title).message(message).icon(icon).build();
+			var notification = Notification.builder().title(title).message(message).icon(icon).build();
 			notifier.send(notification);
 		}
 		finally {
